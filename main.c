@@ -7,6 +7,13 @@ int main() {
     do {
         mainHud();
         scanf("%d", &escolha);
+
+        switch (escolha) {
+            case 1:
+                break;
+            case 2:
+                break;
+        }
     } while (escolha != 2);
 
     return 0;
