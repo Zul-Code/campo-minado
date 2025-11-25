@@ -24,3 +24,26 @@ void opErrorHud() {
 
 void tabuleiroHud() {
 }
+
+void mensagemHud(int tipo) {
+    switch (tipo) {
+        case 1:
+            printf("\n=== JOGO INICIADO ===\n");
+            break;
+        case 2:
+            printf("Digite Linha e Coluna (ex: 0 1): ");
+            break;
+        case 3:
+            printf("Coordenada invalida!\n");
+            break;
+        case 4:
+            printf("Voce ja abriu essa posicao!\n");
+            break;
+        case 5:
+            printf("\nBOOM! Voce pisou numa mina.\n");
+            break;
+        case 6:
+            printf("\nPARABENS! Voce venceu!\n");
+            break;
+    }
+}
