@@ -11,12 +11,6 @@ typedef struct {
 } Celula;
 
 void inicializarTabuleiro(Celula tabuleiro[TAM][TAM]) {
-        for (int i = 0; i < TAM; i++) {
-            for (int j = 0; j < TAM; j++) {
-                tabuleiro[i][j].temBomba = 0;
-                tabuleiro[i][j].estaAberta = 0;
-                tabuleiro[i][j].vizinhos = 0;
-            }
     for (int i = 0; i < TAM; i++) {
         for (int j = 0; j < TAM; j++) {
             tabuleiro[i][j].temBomba = 0;
