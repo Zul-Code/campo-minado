@@ -1,14 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "jogo.h"
+#include "celula.h"
 #define TAM 5
 #define BOMBAS 5
-
-typedef struct {
-    int temBomba;
-    int estaAberta;
-    int vizinhos;
-} Celula;
 
 void inicializarTabuleiro(Celula tabuleiro[TAM][TAM]) {
     for (int i = 0; i < TAM; i++) {
