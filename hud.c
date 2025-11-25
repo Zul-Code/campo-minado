@@ -1,5 +1,9 @@
 #include <stdio.h>
+#include "celula.h"
+#include "jogo.h"
 #include "hud.h"
+#define TAM 5
+
 
 void mainHud() {
     printf("+== CAMPO MINADO - MENU ==+");
@@ -23,6 +27,21 @@ void opErrorHud() {
 }
 
 void tabuleiroHud() {
+    printf("\n   0 1 2 3 4\n");
+    printf("   ---------\n");
+    for (int i = 0; i < TAM; i++) {
+        printf("%d |", i);
+        for (int j = 0; j < TAM; j++) {
+            if (revelarTudo && tabuleiro[i][j].temBomba) {
+                printf("* ");
+            } else if (tabuleiro[i][j].estaAberta) {
+                printf("%d ", contarVizinhos(tabuleiro, i, j));
+            } else {
+                printf("? ");
+            }
+        }
+        printf("\n");
+    }
 }
 
 void mensagemHud(int tipo) {
