@@ -32,6 +32,20 @@ void sortearBombas(Celula tabuleiro[TAM][TAM]) {
     }
 }
 
+int contarVizinhos(Celula tabuleiro[TAM][TAM], int l, int c) {
+    int contagem = 0;
+    for (int i = l - 1; i <= l + 1; i++) {
+        for (int j = c - 1; j <= c + 1; j++) {
+            if (i >= 0 && i < TAM && j >= 0 && j < TAM) {
+                if (tabuleiro[i][j].temBomba) {
+                    contagem++;
+                }
+            }
+        }
+    }
+    return contagem;
+}
+
 float jogarCampoMinado() {
 
     Celula tabuleiro[TAM][TAM];
