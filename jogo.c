@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "jogo.h"
 #include "celula.h"
+#include "hud.h"
 #define TAM 5
 #define BOMBAS 5
 
@@ -42,10 +43,42 @@ int contarVizinhos(Celula tabuleiro[TAM][TAM], int l, int c) {
 }
 
 float jogarCampoMinado() {
-
     Celula tabuleiro[TAM][TAM];
     inicializarTabuleiro(tabuleiro);
     sortearBombas(tabuleiro);
 
+    int abertas = 0;
+    int totalSeguras = (TAM * TAM) - BOMBAS;
+
+    mensagensJogoHud(1);
+
+    while (abertas < totalSeguras) {
+        tabuleiroHud(tabuleiro, 0);
+        int l, c;
+
+        mensagensJogoHud(2);
+        scanf("%d %d", &l, &c);
+
+        if (l < 0 || l >= TAM || c < 0 || c >= TAM) {
+            mensagensJogoHud(3);
+            continue;
+        }
+        if (tabuleiro[l][c].estaAberta) {
+            mensagensJogoHud(4);
+            continue;
+        }
+
+        // Verifica Bomba
+        if (tabuleiro[l][c].temBomba) {
+            tabuleiroHud(tabuleiro, 1);
+            mensagensJogoHud(5);
+            return -1.0;
+        }
+
+        tabuleiro[l][c].estaAberta = 1;
+        abertas++;
+    }
+
+    mensagensJogoHud(6);
     return 0.00;
 }

@@ -44,7 +44,7 @@ void tabuleiroHud(Celula tabuleiro[TAM][TAM], int revelarTudo) {
     }
 }
 
-void mensagemHud(int tipo) {
+void mensagensJogoHud(int tipo) {
     switch (tipo) {
         case 1:
             printf("\n=== JOGO INICIADO ===\n");
