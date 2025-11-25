@@ -12,6 +12,10 @@ int main() {
             case 1:
                 break;
             case 2:
+                saindoHud();
+                break;
+            default:
+                opErrorHud();
                 break;
         }
     } while (escolha != 2);
