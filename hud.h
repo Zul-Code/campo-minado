@@ -1,5 +1,7 @@
 #ifndef HUD_H
 #define HUD_H
+#include "celula.h"
+#define TAM 5
 
 void mainHud();
 void saindoHud();
