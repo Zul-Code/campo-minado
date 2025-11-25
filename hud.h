@@ -4,7 +4,7 @@
 void mainHud();
 void saindoHud();
 void opErrorHud();
-void tabuleiroHud();
+void tabuleiroHud(Celula tabuleiro[TAM][TAM], int revelarTudo);
 void mensagensJogoHud(int tipo);
 
 #endif

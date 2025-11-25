@@ -26,7 +26,7 @@ void opErrorHud() {
     printf("\n\n");
 }
 
-void tabuleiroHud() {
+void tabuleiroHud(Celula tabuleiro[TAM][TAM], int revelarTudo) {
     printf("\n   0 1 2 3 4\n");
     printf("   ---------\n");
     for (int i = 0; i < TAM; i++) {
