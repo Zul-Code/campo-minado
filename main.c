@@ -17,6 +17,8 @@ int main() {
                 }
                 break;
             case 2:
+                break;
+            case 3:
                 saindoHud();
                 break;
             default:

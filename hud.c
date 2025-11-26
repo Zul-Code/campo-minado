@@ -8,7 +8,8 @@
 void mainHud() {
     printf("+== CAMPO MINADO - MENU ==+");
     printf("\n| 1. Jogar                |");
-    printf("\n| 2. Sair                 |");
+    printf("\n| 2. Recorde              |");
+    printf("\n| 3. Sair                 |");
     printf("\n+=========================+");
     printf("\nEscolha: ");
 }
