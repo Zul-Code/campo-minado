@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 #include "jogo.h"
 #include "celula.h"
 #include "hud.h"
@@ -49,8 +50,10 @@ float jogarCampoMinado() {
 
     int abertas = 0;
     int totalSeguras = (TAM * TAM) - BOMBAS;
+    time_t inicio, fim;
 
     mensagensJogoHud(1);
+    time(&inicio);
 
     while (abertas < totalSeguras) {
         tabuleiroHud(tabuleiro, 0);
@@ -68,7 +71,6 @@ float jogarCampoMinado() {
             continue;
         }
 
-        // Verifica Bomba
         if (tabuleiro[l][c].temBomba) {
             tabuleiroHud(tabuleiro, 1);
             mensagensJogoHud(5);
@@ -79,6 +81,7 @@ float jogarCampoMinado() {
         abertas++;
     }
 
+    time(&fim);
     mensagensJogoHud(6);
-    return 0.00;
+    return difftime(fim, inicio);
 }
