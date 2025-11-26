@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "hud.h"
 #include "jogo.h"
+#include "recorde.h"
 
 int main() {
     int escolha;
@@ -14,9 +15,12 @@ int main() {
                 float tempoGasto = jogarCampoMinado();
                 if (tempoGasto >= 0) {
                     printf("Seu tempo: %.2f segundos.\n", tempoGasto);
+                    salvarRecorde(tempoGasto);
                 }
                 break;
             case 2:
+                float recorde = carregarRecorde();
+                mensagensMenuRecorde(recorde);
                 break;
             case 3:
                 saindoHud();
