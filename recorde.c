@@ -3,7 +3,14 @@
 #define ARQUIVO_NOME "recorde.txt"
 
 float carregarRecorde() {
-    return 0.00;
+    FILE *arquivo = fopen(ARQUIVO_NOME, "r");
+    float recorde = 9999.0;
+
+    if (arquivo != NULL) {
+        fscanf(arquivo, "%f", &recorde);
+        fclose(arquivo);
+    }
+    return recorde;
 }
 
 void salvarRecorde(float tempo) {
