@@ -66,3 +66,11 @@ void mensagensJogoHud(int tipo) {
             break;
     }
 }
+
+void mensagensMenuRecorde(float recorde) {
+    if (recorde >= 9999.0) {
+        printf("\nAinda nao ha recorde registrado.\n");
+    } else {
+        printf("\nMelhor tempo registrado: %.2f segundos\n", recorde);
+    }
+}

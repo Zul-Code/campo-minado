@@ -8,5 +8,6 @@ void saindoHud();
 void opErrorHud();
 void tabuleiroHud(Celula tabuleiro[TAM][TAM], int revelarTudo);
 void mensagensJogoHud(int tipo);
+void mensagensMenuRecorde(float recorde);
 
 #endif
